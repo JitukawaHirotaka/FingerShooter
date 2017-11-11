@@ -8,8 +8,11 @@ public class Player : SingletonMonoBehaviourFast<Player>
     private float Speed = 0.0f;
     [SerializeField]
     private float RotSpeed = 0.0f;
+
     [SerializeField]
-    private Vector2 limitedRange;
+    private GameArea gameArea;
+
+    private Vector2 area;
 
     private float angle;
     private Quaternion Angle;
@@ -17,7 +20,7 @@ public class Player : SingletonMonoBehaviourFast<Player>
 
     void Start()
     {
-
+        area = gameArea.Area;
     }
     
     void Update()
@@ -35,7 +38,7 @@ public class Player : SingletonMonoBehaviourFast<Player>
             float rot = ((180.0f - transform.eulerAngles.y) / 180.0f) * Mathf.PI - (Mathf.PI * 0.5f);
             transform.position += new Vector3(Mathf.Cos(rot) * Speed, 0.0f, Mathf.Sin(rot) * Speed);
         }
-        Vector2 size = limitedRange * 0.5f;
+        Vector2 size = area * 0.5f;
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -size.x, size.x), 
                                          transform.position.y, 
                                          Mathf.Clamp(transform.position.z, -size.y, size.y));
