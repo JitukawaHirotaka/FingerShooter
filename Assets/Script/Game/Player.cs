@@ -9,6 +9,9 @@ public class Player : SingletonMonoBehaviourFast<Player>
     [SerializeField]
     private float RotSpeed = 0.0f;
 
+    [SerializeField]
+    private GameArea gameArea;
+
     private Vector2 area;
 
     private float angle;
@@ -17,7 +20,7 @@ public class Player : SingletonMonoBehaviourFast<Player>
 
     void Start()
     {
-        area = GameArea.Instance.Area;
+        area = gameArea.Area;
     }
     
     void Update()

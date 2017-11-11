@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameArea : SingletonMonoBehaviour<GameArea>
+public class GameArea : MonoBehaviour
 {
     public Vector2 Area
     {

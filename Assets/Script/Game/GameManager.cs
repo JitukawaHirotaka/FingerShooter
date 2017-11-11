@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameManager : SingletonMonoBehaviour<GameManager>
+public class GameManager : MonoBehaviour
 {
 	void Start ()
     {
@@ -9,6 +10,10 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 	
 	void Update ()
     {
-		
-	}
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            AudioManager.PauseBGM();
+            SceneManager.LoadScene("Result");
+        }
+    }
 }
