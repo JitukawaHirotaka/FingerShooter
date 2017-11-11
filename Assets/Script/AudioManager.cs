@@ -21,7 +21,6 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
 
 	void Start()
 	{
-		Debug.Log("呼ばれたぜ！Audio");
 		Load();
 	}
 
